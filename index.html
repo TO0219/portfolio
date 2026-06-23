@@ -7,54 +7,23 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@400;600;700&family=Noto+Sans+JP:wght@300;400;700&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
 <style>
-/* ============================================================
-   ポートフォリオ編集ガイド
-   ============================================================
-   【文字を変える】
-   - 名前: id="your-name" の中のテキストを変える
-   - キャッチコピー: id="catchcopy" の中のテキストを変える
-   - 各作品の説明: class="work-desc" の中を変える
-   - 技術ハイライト: class="highlight-item" の中を変える
-
-   【動画を追加する】
-   - class="video-placeholder" を見つける
-   - その中の <video> タグの src="" に動画ファイルのパスを入れる
-   - 例: src="videos/dx11_gameplay.mp4"
-
-   【画像を追加する】
-   - class="img-placeholder" を見つける
-   - <img src="" alt=""> の src に画像パスを入れる
-
-   【作品を追加・削除する】
-   - class="work-section" のブロック全体をコピー or 削除する
-
-   【色を変える】
-   - 下の :root {} の中の変数を変えるだけで全体の色が変わる
-   ============================================================ */
-
 :root {
-  /* ===== カラー設定 ===== */
-  --bg:        #0a0a0f;       /* 背景色 */
-  --bg2:       #0f0f1a;       /* カードの背景 */
-  --bg3:       #14141f;       /* セクション背景 */
-  --accent:    #00e5ff;       /* メインアクセント（シアン） */
-  --accent2:   #7b2fff;       /* サブアクセント（パープル） */
-  --accent3:   #ff4d6d;       /* 強調色（レッド） */
-  --text:      #e8e8f0;       /* メインテキスト */
-  --text-sub:  #7878a0;       /* サブテキスト */
-  --border:    #1e1e30;       /* ボーダー色 */
-  --glow:      rgba(0,229,255,0.15); /* グロー効果 */
-
-  /* ===== フォント設定 ===== */
+  --bg:        #0a0a0f;
+  --bg2:       #0f0f1a;
+  --bg3:       #14141f;
+  --accent:    #00e5ff;
+  --accent2:   #7b2fff;
+  --accent3:   #ff4d6d;
+  --text:      #e8e8f0;
+  --text-sub:  #7878a0;
+  --border:    #1e1e30;
+  --glow:      rgba(0,229,255,0.15);
   --font-display: 'Rajdhani', sans-serif;
   --font-body:    'Noto Sans JP', sans-serif;
   --font-mono:    'JetBrains Mono', monospace;
 }
-
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-
 html { scroll-behavior: smooth; }
-
 body {
   background: var(--bg);
   color: var(--text);
@@ -63,28 +32,14 @@ body {
   line-height: 1.8;
   overflow-x: hidden;
 }
-
-/* ============================================================
-   スキャンライン エフェクト（取りたい場合はこのブロックを削除）
-   ============================================================ */
 body::before {
   content: '';
   position: fixed;
   inset: 0;
-  background: repeating-linear-gradient(
-    0deg,
-    transparent,
-    transparent 2px,
-    rgba(0,229,255,0.015) 2px,
-    rgba(0,229,255,0.015) 4px
-  );
+  background: repeating-linear-gradient(0deg, transparent, transparent 2px, rgba(0,229,255,0.015) 2px, rgba(0,229,255,0.015) 4px);
   pointer-events: none;
   z-index: 9999;
 }
-
-/* ============================================================
-   ナビゲーション
-   ============================================================ */
 nav {
   position: fixed;
   top: 0; left: 0; right: 0;
@@ -97,33 +52,10 @@ nav {
   backdrop-filter: blur(12px);
   border-bottom: 1px solid var(--border);
 }
-
-.nav-logo {
-  font-family: var(--font-mono);
-  color: var(--accent);
-  font-size: 0.85rem;
-  letter-spacing: 0.15em;
-}
-
-.nav-links {
-  display: flex;
-  gap: 2rem;
-  list-style: none;
-}
-
-.nav-links a {
-  color: var(--text-sub);
-  text-decoration: none;
-  font-size: 0.85rem;
-  letter-spacing: 0.1em;
-  transition: color 0.2s;
-}
-
+.nav-logo { font-family: var(--font-mono); color: var(--accent); font-size: 0.85rem; letter-spacing: 0.15em; }
+.nav-links { display: flex; gap: 2rem; list-style: none; }
+.nav-links a { color: var(--text-sub); text-decoration: none; font-size: 0.85rem; letter-spacing: 0.1em; transition: color 0.2s; }
 .nav-links a:hover { color: var(--accent); }
-
-/* ============================================================
-   ヒーローセクション
-   ============================================================ */
 #hero {
   min-height: 100vh;
   display: flex;
@@ -133,23 +65,14 @@ nav {
   position: relative;
   overflow: hidden;
 }
-
 .hero-grid-bg {
   position: absolute;
   inset: 0;
-  background-image:
-    linear-gradient(rgba(0,229,255,0.04) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(0,229,255,0.04) 1px, transparent 1px);
+  background-image: linear-gradient(rgba(0,229,255,0.04) 1px, transparent 1px), linear-gradient(90deg, rgba(0,229,255,0.04) 1px, transparent 1px);
   background-size: 60px 60px;
   mask-image: radial-gradient(ellipse 80% 80% at 50% 50%, black, transparent);
 }
-
-.hero-inner {
-  max-width: 900px;
-  position: relative;
-  z-index: 1;
-}
-
+.hero-inner { max-width: 900px; position: relative; z-index: 1; }
 .hero-eyebrow {
   font-family: var(--font-mono);
   font-size: 0.8rem;
@@ -161,16 +84,7 @@ nav {
   align-items: center;
   gap: 0.75rem;
 }
-
-.hero-eyebrow::before {
-  content: '';
-  display: inline-block;
-  width: 40px;
-  height: 1px;
-  background: var(--accent);
-}
-
-/* ===== 名前はここを変える ===== */
+.hero-eyebrow::before { content: ''; display: inline-block; width: 40px; height: 1px; background: var(--accent); }
 #your-name {
   font-family: var(--font-display);
   font-size: clamp(3rem, 8vw, 7rem);
@@ -183,466 +97,64 @@ nav {
   -webkit-text-fill-color: transparent;
   background-clip: text;
 }
-
-/* ===== キャッチコピーはここを変える ===== */
-#catchcopy {
-  font-size: clamp(1rem, 2.5vw, 1.4rem);
-  color: var(--text-sub);
-  max-width: 600px;
-  margin-bottom: 3rem;
-  font-weight: 300;
-}
-
-.hero-tags {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 0.75rem;
-  margin-bottom: 3rem;
-}
-
-/* ===== スキルタグはここを変える（.hero-tag を追加・削除） ===== */
-.hero-tag {
-  font-family: var(--font-mono);
-  font-size: 0.75rem;
-  color: var(--accent);
-  border: 1px solid rgba(0,229,255,0.3);
-  padding: 0.35rem 0.9rem;
-  letter-spacing: 0.1em;
-  background: rgba(0,229,255,0.05);
-}
-
-.hero-cta {
-  display: flex;
-  gap: 1rem;
-  flex-wrap: wrap;
-}
-
-.btn-primary {
-  font-family: var(--font-mono);
-  font-size: 0.8rem;
-  letter-spacing: 0.15em;
-  color: var(--bg);
-  background: var(--accent);
-  padding: 0.75rem 2rem;
-  text-decoration: none;
-  font-weight: 700;
-  transition: all 0.2s;
-  clip-path: polygon(8px 0%, 100% 0%, calc(100% - 8px) 100%, 0% 100%);
-}
-
-.btn-primary:hover {
-  background: #fff;
-  box-shadow: 0 0 30px var(--accent);
-}
-
-.btn-secondary {
-  font-family: var(--font-mono);
-  font-size: 0.8rem;
-  letter-spacing: 0.15em;
-  color: var(--accent);
-  border: 1px solid rgba(0,229,255,0.4);
-  padding: 0.75rem 2rem;
-  text-decoration: none;
-  transition: all 0.2s;
-}
-
-.btn-secondary:hover {
-  background: rgba(0,229,255,0.08);
-  border-color: var(--accent);
-}
-
-/* ============================================================
-   セクション共通
-   ============================================================ */
-section {
-  padding: 6rem 3rem;
-  max-width: 1100px;
-  margin: 0 auto;
-}
-
-.section-label {
-  font-family: var(--font-mono);
-  font-size: 0.75rem;
-  color: var(--accent2);
-  letter-spacing: 0.3em;
-  text-transform: uppercase;
-  margin-bottom: 0.5rem;
-}
-
-.section-title {
-  font-family: var(--font-display);
-  font-size: clamp(2rem, 4vw, 3rem);
-  font-weight: 700;
-  margin-bottom: 3rem;
-  letter-spacing: 0.03em;
-}
-
-/* ============================================================
-   作品セクション
-   ============================================================ */
-#works { max-width: 1100px; }
-
-/* ===== 作品1枚のブロック。コピーして増やせる ===== */
-.work-section {
-  margin-bottom: 6rem;
-  border: 1px solid var(--border);
-  background: var(--bg2);
-  overflow: hidden;
-  position: relative;
-}
-
-.work-section::before {
-  content: '';
-  position: absolute;
-  top: 0; left: 0; right: 0;
-  height: 2px;
-  background: linear-gradient(90deg, var(--accent), var(--accent2));
-}
-
-/* ===== 動画・画像エリア ===== */
-.work-media {
-  width: 100%;
-  aspect-ratio: 16/9;
-  background: #05050d;
-  position: relative;
-  overflow: hidden;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-/* 動画を入れる場合: <video> タグを .work-media の中に入れる */
-.work-media video {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-}
-
-/* 画像を入れる場合: <img> タグを .work-media の中に入れる */
-.work-media img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-}
-
-/* 動画・画像がまだない場合のプレースホルダー */
-.media-placeholder {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 1rem;
-  color: var(--text-sub);
-  font-family: var(--font-mono);
-  font-size: 0.8rem;
-  letter-spacing: 0.15em;
-}
-
-.media-placeholder-icon {
-  width: 60px;
-  height: 60px;
-  border: 1px solid var(--border);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 1.5rem;
-}
-
-.work-body {
-  padding: 2.5rem 3rem;
-}
-
-.work-header {
-  display: flex;
-  align-items: flex-start;
-  justify-content: space-between;
-  gap: 1rem;
-  margin-bottom: 1.5rem;
-  flex-wrap: wrap;
-}
-
-.work-number {
-  font-family: var(--font-mono);
-  font-size: 0.7rem;
-  color: var(--accent);
-  letter-spacing: 0.2em;
-  background: rgba(0,229,255,0.08);
-  border: 1px solid rgba(0,229,255,0.2);
-  padding: 0.25rem 0.7rem;
-  white-space: nowrap;
-}
-
-/* ===== 作品タイトルはここを変える ===== */
-.work-title {
-  font-family: var(--font-display);
-  font-size: clamp(1.5rem, 3vw, 2.2rem);
-  font-weight: 700;
-  letter-spacing: 0.03em;
-  line-height: 1.1;
-}
-
-.work-meta {
-  display: flex;
-  gap: 1.5rem;
-  margin-bottom: 1.5rem;
-  flex-wrap: wrap;
-}
-
-.work-meta-item {
-  font-family: var(--font-mono);
-  font-size: 0.75rem;
-  color: var(--text-sub);
-  letter-spacing: 0.1em;
-  display: flex;
-  align-items: center;
-  gap: 0.4rem;
-}
-
+#catchcopy { font-size: clamp(1rem, 2.5vw, 1.4rem); color: var(--text-sub); max-width: 600px; margin-bottom: 3rem; font-weight: 300; }
+.hero-tags { display: flex; flex-wrap: wrap; gap: 0.75rem; margin-bottom: 3rem; }
+.hero-tag { font-family: var(--font-mono); font-size: 0.75rem; color: var(--accent); border: 1px solid rgba(0,229,255,0.3); padding: 0.35rem 0.9rem; letter-spacing: 0.1em; background: rgba(0,229,255,0.05); }
+.hero-cta { display: flex; gap: 1rem; flex-wrap: wrap; }
+.btn-primary { font-family: var(--font-mono); font-size: 0.8rem; letter-spacing: 0.15em; color: var(--bg); background: var(--accent); padding: 0.75rem 2rem; text-decoration: none; font-weight: 700; transition: all 0.2s; clip-path: polygon(8px 0%, 100% 0%, calc(100% - 8px) 100%, 0% 100%); }
+.btn-primary:hover { background: #fff; box-shadow: 0 0 30px var(--accent); }
+.btn-secondary { font-family: var(--font-mono); font-size: 0.8rem; letter-spacing: 0.15em; color: var(--accent); border: 1px solid rgba(0,229,255,0.4); padding: 0.75rem 2rem; text-decoration: none; transition: all 0.2s; }
+.btn-secondary:hover { background: rgba(0,229,255,0.08); border-color: var(--accent); }
+section { padding: 6rem 3rem; max-width: 1100px; margin: 0 auto; }
+.section-label { font-family: var(--font-mono); font-size: 0.75rem; color: var(--accent2); letter-spacing: 0.3em; text-transform: uppercase; margin-bottom: 0.5rem; }
+.section-title { font-family: var(--font-display); font-size: clamp(2rem, 4vw, 3rem); font-weight: 700; margin-bottom: 3rem; letter-spacing: 0.03em; }
+.work-section { margin-bottom: 6rem; border: 1px solid var(--border); background: var(--bg2); overflow: hidden; position: relative; }
+.work-section::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 2px; background: linear-gradient(90deg, var(--accent), var(--accent2)); }
+.work-media { width: 100%; aspect-ratio: 16/9; background: #05050d; position: relative; overflow: hidden; display: flex; align-items: center; justify-content: center; }
+.work-media video { width: 100%; height: 100%; object-fit: cover; }
+.work-media img { width: 100%; height: 100%; object-fit: cover; }
+.media-placeholder { display: flex; flex-direction: column; align-items: center; gap: 1rem; color: var(--text-sub); font-family: var(--font-mono); font-size: 0.8rem; letter-spacing: 0.15em; }
+.media-placeholder-icon { width: 60px; height: 60px; border: 1px solid var(--border); display: flex; align-items: center; justify-content: center; font-size: 1.5rem; }
+.work-body { padding: 2.5rem 3rem; }
+.work-header { display: flex; align-items: flex-start; justify-content: space-between; gap: 1rem; margin-bottom: 1.5rem; flex-wrap: wrap; }
+.work-number { font-family: var(--font-mono); font-size: 0.7rem; color: var(--accent); letter-spacing: 0.2em; background: rgba(0,229,255,0.08); border: 1px solid rgba(0,229,255,0.2); padding: 0.25rem 0.7rem; white-space: nowrap; }
+.work-title { font-family: var(--font-display); font-size: clamp(1.5rem, 3vw, 2.2rem); font-weight: 700; letter-spacing: 0.03em; line-height: 1.1; }
+.work-meta { display: flex; gap: 1.5rem; margin-bottom: 1.5rem; flex-wrap: wrap; }
+.work-meta-item { font-family: var(--font-mono); font-size: 0.75rem; color: var(--text-sub); letter-spacing: 0.1em; display: flex; align-items: center; gap: 0.4rem; }
 .work-meta-item span { color: var(--accent2); }
-
-/* ===== 作品説明テキストはここを変える (.work-desc) ===== */
-.work-desc {
-  color: var(--text-sub);
-  font-size: 0.95rem;
-  line-height: 1.9;
-  margin-bottom: 2rem;
-  max-width: 700px;
-}
-
-/* ===== 技術ハイライト ===== */
-.highlights {
-  margin-bottom: 2rem;
-}
-
-.highlights-title {
-  font-family: var(--font-mono);
-  font-size: 0.7rem;
-  color: var(--accent);
-  letter-spacing: 0.25em;
-  text-transform: uppercase;
-  margin-bottom: 1rem;
-  display: flex;
-  align-items: center;
-  gap: 0.5rem;
-}
-
-.highlights-title::after {
-  content: '';
-  flex: 1;
-  height: 1px;
-  background: var(--border);
-}
-
-.highlight-list {
-  list-style: none;
-  display: flex;
-  flex-direction: column;
-  gap: 0.6rem;
-}
-
-/* ===== 技術ハイライト1行はここを変える (.highlight-item) ===== */
-.highlight-item {
-  display: flex;
-  gap: 0.75rem;
-  font-size: 0.9rem;
-  line-height: 1.6;
-}
-
-.highlight-item::before {
-  content: '▸';
-  color: var(--accent);
-  flex-shrink: 0;
-  margin-top: 0.15rem;
-}
-
-/* ===== 使用技術バッジ ===== */
-.tech-stack {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 0.5rem;
-}
-
-.tech-badge {
-  font-family: var(--font-mono);
-  font-size: 0.72rem;
-  letter-spacing: 0.08em;
-  padding: 0.3rem 0.75rem;
-  background: rgba(123,47,255,0.1);
-  border: 1px solid rgba(123,47,255,0.25);
-  color: #b09fff;
-}
-
-/* ============================================================
-   スキルセクション
-   ============================================================ */
+.work-desc { color: var(--text-sub); font-size: 0.95rem; line-height: 1.9; margin-bottom: 2rem; max-width: 700px; }
+.highlights { margin-bottom: 2rem; }
+.highlights-title { font-family: var(--font-mono); font-size: 0.7rem; color: var(--accent); letter-spacing: 0.25em; text-transform: uppercase; margin-bottom: 1rem; display: flex; align-items: center; gap: 0.5rem; }
+.highlights-title::after { content: ''; flex: 1; height: 1px; background: var(--border); }
+.highlight-list { list-style: none; display: flex; flex-direction: column; gap: 0.6rem; }
+.highlight-item { display: flex; gap: 0.75rem; font-size: 0.9rem; line-height: 1.6; }
+.highlight-item::before { content: '▸'; color: var(--accent); flex-shrink: 0; margin-top: 0.15rem; }
+.tech-stack { display: flex; flex-wrap: wrap; gap: 0.5rem; }
+.tech-badge { font-family: var(--font-mono); font-size: 0.72rem; letter-spacing: 0.08em; padding: 0.3rem 0.75rem; background: rgba(123,47,255,0.1); border: 1px solid rgba(123,47,255,0.25); color: #b09fff; }
 #skills { background: var(--bg3); max-width: 100%; padding: 6rem 3rem; }
 #skills-inner { max-width: 1100px; margin: 0 auto; }
-
-.skill-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
-  gap: 1.5rem;
-}
-
-.skill-card {
-  border: 1px solid var(--border);
-  background: var(--bg2);
-  padding: 1.75rem;
-}
-
-.skill-card-title {
-  font-family: var(--font-mono);
-  font-size: 0.75rem;
-  color: var(--accent);
-  letter-spacing: 0.2em;
-  text-transform: uppercase;
-  margin-bottom: 1.25rem;
-}
-
-.skill-items {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 0.5rem;
-}
-
-.skill-item {
-  font-size: 0.8rem;
-  color: var(--text-sub);
-  background: rgba(255,255,255,0.03);
-  border: 1px solid var(--border);
-  padding: 0.25rem 0.65rem;
-  font-family: var(--font-mono);
-  letter-spacing: 0.05em;
-}
-
-/* ============================================================
-   自己紹介セクション
-   ============================================================ */
-#about {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 4rem;
-  align-items: start;
-}
-
-@media (max-width: 768px) {
-  #about { grid-template-columns: 1fr; }
-}
-
-/* ===== 自己紹介文はここを変える ===== */
-.about-text {
-  color: var(--text-sub);
-  font-size: 0.95rem;
-  line-height: 2;
-}
-
+.skill-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 1.5rem; }
+.skill-card { border: 1px solid var(--border); background: var(--bg2); padding: 1.75rem; }
+.skill-card-title { font-family: var(--font-mono); font-size: 0.75rem; color: var(--accent); letter-spacing: 0.2em; text-transform: uppercase; margin-bottom: 1.25rem; }
+.skill-items { display: flex; flex-wrap: wrap; gap: 0.5rem; }
+.skill-item { font-size: 0.8rem; color: var(--text-sub); background: rgba(255,255,255,0.03); border: 1px solid var(--border); padding: 0.25rem 0.65rem; font-family: var(--font-mono); letter-spacing: 0.05em; }
+#about { display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: start; }
+@media (max-width: 768px) { #about { grid-template-columns: 1fr; } }
+.about-text { color: var(--text-sub); font-size: 0.95rem; line-height: 2; }
 .about-text p + p { margin-top: 1rem; }
-
-.about-info {
-  display: flex;
-  flex-direction: column;
-  gap: 1rem;
-}
-
-.about-info-row {
-  display: flex;
-  gap: 1rem;
-  padding-bottom: 1rem;
-  border-bottom: 1px solid var(--border);
-  font-size: 0.85rem;
-}
-
-.about-info-label {
-  font-family: var(--font-mono);
-  font-size: 0.7rem;
-  color: var(--accent2);
-  letter-spacing: 0.15em;
-  min-width: 100px;
-  padding-top: 0.1rem;
-}
-
-/* ============================================================
-   連絡先
-   ============================================================ */
-#contact-section {
-  background: var(--bg3);
-  max-width: 100%;
-  padding: 5rem 3rem;
-  border-top: 1px solid var(--border);
-}
-
-#contact-inner {
-  max-width: 1100px;
-  margin: 0 auto;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  flex-wrap: wrap;
-  gap: 2rem;
-}
-
-.contact-title {
-  font-family: var(--font-display);
-  font-size: clamp(1.5rem, 3vw, 2.5rem);
-  font-weight: 700;
-  letter-spacing: 0.03em;
-}
-
-.contact-links {
-  display: flex;
-  flex-direction: column;
-  gap: 0.75rem;
-}
-
-/* ===== 連絡先リンクはここを変える ===== */
-.contact-link {
-  display: flex;
-  align-items: center;
-  gap: 0.75rem;
-  font-family: var(--font-mono);
-  font-size: 0.8rem;
-  color: var(--text-sub);
-  text-decoration: none;
-  letter-spacing: 0.1em;
-  transition: color 0.2s;
-}
-
+.about-info { display: flex; flex-direction: column; gap: 1rem; }
+.about-info-row { display: flex; gap: 1rem; padding-bottom: 1rem; border-bottom: 1px solid var(--border); font-size: 0.85rem; }
+.about-info-label { font-family: var(--font-mono); font-size: 0.7rem; color: var(--accent2); letter-spacing: 0.15em; min-width: 100px; padding-top: 0.1rem; }
+#contact-section { background: var(--bg3); max-width: 100%; padding: 5rem 3rem; border-top: 1px solid var(--border); }
+#contact-inner { max-width: 1100px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 2rem; }
+.contact-title { font-family: var(--font-display); font-size: clamp(1.5rem, 3vw, 2.5rem); font-weight: 700; letter-spacing: 0.03em; }
+.contact-links { display: flex; flex-direction: column; gap: 0.75rem; }
+.contact-link { display: flex; align-items: center; gap: 0.75rem; font-family: var(--font-mono); font-size: 0.8rem; color: var(--text-sub); text-decoration: none; letter-spacing: 0.1em; transition: color 0.2s; }
 .contact-link:hover { color: var(--accent); }
-
-.contact-link-label {
-  color: var(--accent2);
-  min-width: 70px;
-}
-
-/* ============================================================
-   フッター
-   ============================================================ */
-footer {
-  text-align: center;
-  padding: 2rem;
-  font-family: var(--font-mono);
-  font-size: 0.7rem;
-  color: var(--text-sub);
-  letter-spacing: 0.15em;
-  border-top: 1px solid var(--border);
-}
-
-/* ============================================================
-   スクロールアニメーション
-   ============================================================ */
-.fade-in {
-  opacity: 0;
-  transform: translateY(24px);
-  transition: opacity 0.6s ease, transform 0.6s ease;
-}
-
-.fade-in.visible {
-  opacity: 1;
-  transform: translateY(0);
-}
-
-/* ============================================================
-   レスポンシブ
-   ============================================================ */
+.contact-link-label { color: var(--accent2); min-width: 70px; }
+footer { text-align: center; padding: 2rem; font-family: var(--font-mono); font-size: 0.7rem; color: var(--text-sub); letter-spacing: 0.15em; border-top: 1px solid var(--border); }
+.fade-in { opacity: 0; transform: translateY(24px); transition: opacity 0.6s ease, transform 0.6s ease; }
+.fade-in.visible { opacity: 1; transform: translateY(0); }
 @media (max-width: 768px) {
   nav { padding: 1rem 1.5rem; }
   #hero, section { padding-left: 1.5rem; padding-right: 1.5rem; }
@@ -653,9 +165,6 @@ footer {
 </head>
 <body>
 
-<!-- ============================================================
-     ナビゲーション
-     ============================================================ -->
 <nav>
   <div class="nav-logo">// PORTFOLIO</div>
   <ul class="nav-links">
@@ -666,24 +175,14 @@ footer {
   </ul>
 </nav>
 
-<!-- ============================================================
-     ヒーローセクション
-     ★ 名前・キャッチコピー・タグをここで変える
-     ============================================================ -->
 <section id="hero">
   <div class="hero-grid-bg"></div>
   <div class="hero-inner">
     <div class="hero-eyebrow">Game Programmer</div>
-
-    <!-- ★ 名前を変える -->
     <h1 id="your-name">鈴木　智裕</h1>
-
-    <!-- ★ キャッチコピーを変える -->
     <p id="catchcopy">
       低レイヤーからUE5まで。<br>自作エンジン・商用エンジン両方を扱えるゲームプログラマー。
     </p>
-
-    <!-- ★ タグを追加・削除・変更する -->
     <div class="hero-tags">
       <span class="hero-tag">DirectX 11</span>
       <span class="hero-tag">DirectX 12</span>
@@ -693,122 +192,47 @@ footer {
       <span class="hero-tag">C++</span>
       <span class="hero-tag">C#</span>
     </div>
-
     <div class="hero-cta">
       <a href="#works" class="btn-primary">VIEW WORKS</a>
-      <!-- ★ GitHubのURLを変える -->
-      <a href="https://github.com/" class="btn-secondary" target="_blank">GITHUB</a>
+      <a href="https://github.com/TO0219" class="btn-secondary" target="_blank">GITHUB</a>
     </div>
   </div>
 </section>
 
-<!-- ============================================================
-     作品セクション
-     ★ 作品を追加するには .work-section ブロックをまるごとコピーする
-     ============================================================ -->
 <section id="works" style="max-width:1100px; margin:0 auto; padding:6rem 3rem;">
   <div class="section-label">WORKS</div>
   <h2 class="section-title">制作実績</h2>
 
   <!-- ========================================
-       作品①: DirectX11 3Dゲーム
+       作品①: UE5「結び目の夜」
        ======================================== -->
   <div class="work-section fade-in">
-
-    <!-- ★ 動画を入れる場合: 下の media-placeholder を削除して以下を追加
-         <video controls autoplay muted loop>
-           <source src="videos/dx11_game.mp4" type="video/mp4">
-         </video>
-    -->
-    <!-- ★ 画像を入れる場合: 下の media-placeholder を削除して以下を追加
-         <img src="images/dx11_screenshot.png" alt="DX11ゲームスクリーンショット">
-    -->
     <div class="work-media">
+      <!-- ★ 動画を入れる場合はここの media-placeholder を丸ごと削除して以下を貼る
+      <video controls muted loop autoplay>
+        <source src="ue5_game.mp4" type="video/mp4">
+      </video>
+      -->
       <div class="media-placeholder">
         <div class="media-placeholder-icon">▶</div>
         <div>ここに動画または画像を入れる</div>
-        <div style="color:#3a3a5c; font-size:0.65rem;">src="" に動画/画像のパスを入れてください</div>
       </div>
     </div>
-
     <div class="work-body">
       <div class="work-header">
-        <div>
-          <!-- ★ 作品タイトルを変える -->
-          <h3 class="work-title">DirectX11 3Dアクションゲーム</h3>
-        </div>
+        <div><h3 class="work-title">結び目の夜 — UE5ホラーゲーム</h3></div>
         <div class="work-number">WORK 01</div>
       </div>
-
-      <!-- ★ 制作期間・担当などを変える -->
-      <div class="work-meta">
-        <div class="work-meta-item"><span>制作期間</span> 〇ヶ月</div>
-        <div class="work-meta-item"><span>担当</span> 個人制作</div>
-        <div class="work-meta-item"><span>エンジン</span> DirectX 11</div>
-      </div>
-
-      <!-- ★ 作品説明を変える -->
-      <p class="work-desc">
-        DirectX11を使用して1から構築した3Dアクションゲーム。
-        高ポリゴンのキャラクターと広大な草原フィールドを実装。
-        初期はFPS14.5まで低下するパフォーマンス問題が発生し、
-        ボトルネックを分析・複数の手法で改善した。
-      </p>
-
-      <!-- ★ 技術ハイライトを変える（追加・削除・文章変更） -->
-      <div class="highlights">
-        <div class="highlights-title">技術ハイライト</div>
-        <ul class="highlight-list">
-          <li class="highlight-item">地形処理をCPUからGPU側へ移行し、CPU-GPU間のボトルネックを解消</li>
-          <li class="highlight-item">距離フォグを実装し、遠距離描画の無駄な処理負荷を削減</li>
-          <li class="highlight-item">animationModel / modelRenderer / particle 等を独自クラスで設計・分離</li>
-          <li class="highlight-item">ImGuiを用いたリアルタイムデバッグUIを組み込み</li>
-          <li class="highlight-item">GrassInstance による大量インスタンス草描画を実装</li>
-        </ul>
-      </div>
-
-      <!-- ★ 使用技術バッジを変える -->
-      <div class="tech-stack">
-        <span class="tech-badge">C++</span>
-        <span class="tech-badge">DirectX 11</span>
-        <span class="tech-badge">HLSL</span>
-        <span class="tech-badge">ImGui</span>
-        <span class="tech-badge">Visual Studio</span>
-      </div>
-    </div>
-  </div>
-
-  <!-- ========================================
-       作品②: UE5「結び目の夜」
-       ======================================== -->
-  <div class="work-section fade-in">
-    <div class="work-media">
-      <div class="media-placeholder">
-        <div class="media-placeholder-icon">▶</div>
-        <div>ここに動画または画像を入れる</div>
-      </div>
-    </div>
-
-    <div class="work-body">
-      <div class="work-header">
-        <div>
-          <h3 class="work-title">結び目の夜 — UE5ホラーゲーム</h3>
-        </div>
-        <div class="work-number">WORK 02</div>
-      </div>
-
       <div class="work-meta">
         <div class="work-meta-item"><span>制作期間</span> 約1年</div>
         <div class="work-meta-item"><span>担当</span> 個人制作（企画〜実装）</div>
         <div class="work-meta-item"><span>エンジン</span> Unreal Engine 5</div>
       </div>
-
       <p class="work-desc">
         学校のカリキュラム外のUE5を独学で習得し、授業と並行して約1年かけて完成させたホラーゲーム。
         主人公・朝比奈結が7体の霊に追われながら星の灯火を集め、石の祭壇を目指す。
         マップはプロシージャル生成で毎回異なる体験を提供する。
       </p>
-
       <div class="highlights">
         <div class="highlights-title">技術ハイライト</div>
         <ul class="highlight-list">
@@ -819,7 +243,6 @@ footer {
           <li class="highlight-item">カリキュラム外ツールを独力で習得し、フル工程を一人でやり切った</li>
         </ul>
       </div>
-
       <div class="tech-stack">
         <span class="tech-badge">Unreal Engine 5</span>
         <span class="tech-badge">Blueprint</span>
@@ -831,36 +254,86 @@ footer {
   </div>
 
   <!-- ========================================
-       作品③: DirectX12 自作エンジン
+       作品②: DirectX11 3Dゲーム
        ======================================== -->
   <div class="work-section fade-in">
     <div class="work-media">
+      <!-- ★ 動画を入れる場合はここの media-placeholder を丸ごと削除して以下を貼る
+      <video controls muted loop autoplay>
+        <source src="dx11_game.mp4" type="video/mp4">
+      </video>
+      -->
       <div class="media-placeholder">
         <div class="media-placeholder-icon">▶</div>
         <div>ここに動画または画像を入れる</div>
       </div>
     </div>
-
     <div class="work-body">
       <div class="work-header">
-        <div>
-          <h3 class="work-title">DirectX12 自作ゲームエンジン</h3>
-        </div>
+        <div><h3 class="work-title">DirectX11 3Dアクションゲーム</h3></div>
+        <div class="work-number">WORK 02</div>
+      </div>
+      <div class="work-meta">
+        <div class="work-meta-item"><span>制作期間</span> 〇ヶ月</div>
+        <div class="work-meta-item"><span>担当</span> 個人制作</div>
+        <div class="work-meta-item"><span>エンジン</span> DirectX 11</div>
+      </div>
+      <p class="work-desc">
+        DirectX11を使用して1から構築した3Dアクションゲーム。
+        高ポリゴンのキャラクターと広大な草原フィールドを実装。
+        初期はFPS14.5まで低下するパフォーマンス問題が発生し、
+        ボトルネックを分析・複数の手法で改善した。
+      </p>
+      <div class="highlights">
+        <div class="highlights-title">技術ハイライト</div>
+        <ul class="highlight-list">
+          <li class="highlight-item">地形処理をCPUからGPU側へ移行し、CPU-GPU間のボトルネックを解消</li>
+          <li class="highlight-item">距離フォグを実装し、遠距離描画の無駄な処理負荷を削減</li>
+          <li class="highlight-item">animationModel / modelRenderer / particle 等を独自クラスで設計・分離</li>
+          <li class="highlight-item">ImGuiを用いたリアルタイムデバッグUIを組み込み</li>
+          <li class="highlight-item">GrassInstance による大量インスタンス草描画を実装</li>
+        </ul>
+      </div>
+      <div class="tech-stack">
+        <span class="tech-badge">C++</span>
+        <span class="tech-badge">DirectX 11</span>
+        <span class="tech-badge">HLSL</span>
+        <span class="tech-badge">ImGui</span>
+        <span class="tech-badge">Visual Studio</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- ========================================
+       作品③: DirectX12 自作エンジン
+       ======================================== -->
+  <div class="work-section fade-in">
+    <div class="work-media">
+      <!-- ★ 動画を入れる場合はここの media-placeholder を丸ごと削除して以下を貼る
+      <video controls muted loop autoplay>
+        <source src="dx12_engine.mp4" type="video/mp4">
+      </video>
+      -->
+      <div class="media-placeholder">
+        <div class="media-placeholder-icon">▶</div>
+        <div>ここに動画または画像を入れる</div>
+      </div>
+    </div>
+    <div class="work-body">
+      <div class="work-header">
+        <div><h3 class="work-title">DirectX12 自作ゲームエンジン</h3></div>
         <div class="work-number">WORK 03</div>
       </div>
-
       <div class="work-meta">
         <div class="work-meta-item"><span>制作期間</span> 〇ヶ月</div>
         <div class="work-meta-item"><span>担当</span> 個人制作</div>
         <div class="work-meta-item"><span>エンジン</span> DirectX 12</div>
       </div>
-
       <p class="work-desc">
         DirectX12を使用してゲームエンジンをスクラッチから構築。
         DX11と比べて大幅に増えた事前セットアップ（コマンドリスト・コマンドキュー・ディスクリプタヒープ等）を
         全て手動で実装し、GPU低レイヤーの理解を深めた。
       </p>
-
       <div class="highlights">
         <div class="highlights-title">技術ハイライト</div>
         <ul class="highlight-list">
@@ -871,7 +344,6 @@ footer {
           <li class="highlight-item">ImGuiによるランタイム制御UI（位置・回転・スケール・モデル選択）を組み込み</li>
         </ul>
       </div>
-
       <div class="tech-stack">
         <span class="tech-badge">C++</span>
         <span class="tech-badge">DirectX 12</span>
@@ -888,34 +360,32 @@ footer {
        ======================================== -->
   <div class="work-section fade-in">
     <div class="work-media">
+      <!-- ★ 動画を入れる場合はここの media-placeholder を丸ごと削除して以下を貼る
+      <video controls muted loop autoplay>
+        <source src="unity_team.mp4" type="video/mp4">
+      </video>
+      -->
       <div class="media-placeholder">
         <div class="media-placeholder-icon">▶</div>
         <div>ここに動画または画像を入れる</div>
       </div>
     </div>
-
     <div class="work-body">
       <div class="work-header">
-        <div>
-          <!-- ★ チーム作品のタイトルを変える -->
-          <h3 class="work-title">チーム制作ゲーム — Unity</h3>
-        </div>
+        <div><h3 class="work-title">チーム制作ゲーム — Unity</h3></div>
         <div class="work-number">WORK 04</div>
       </div>
-
       <div class="work-meta">
         <div class="work-meta-item"><span>制作期間</span> 〇ヶ月</div>
         <div class="work-meta-item"><span>担当</span> メインプログラム・UIプログラム</div>
         <div class="work-meta-item"><span>チーム規模</span> 〇人</div>
       </div>
-
       <p class="work-desc">
         Unityでのチーム開発を経験。メインプログラムとUI実装を担当。
         開発中にプロジェクト設定の問題・Gitコンフリクト・報連相のすれ違いが重なり
         チームメンバーと衝突したが、お互いの課題を率直に話し合い改善。
         就職前にチームで働くことの本質を体験した。
       </p>
-
       <div class="highlights">
         <div class="highlights-title">技術ハイライト</div>
         <ul class="highlight-list">
@@ -926,7 +396,6 @@ footer {
           <li class="highlight-item">Gitコンフリクト・報連相の失敗を経験し、チームとしての改善サイクルを回した</li>
         </ul>
       </div>
-
       <div class="tech-stack">
         <span class="tech-badge">Unity</span>
         <span class="tech-badge">C#</span>
@@ -939,15 +408,10 @@ footer {
 
 </section>
 
-<!-- ============================================================
-     スキルセクション
-     ★ スキルを追加・削除するには .skill-item を変える
-     ============================================================ -->
 <div id="skills">
   <div id="skills-inner">
     <div class="section-label">SKILLS</div>
     <h2 class="section-title">技術スタック</h2>
-
     <div class="skill-grid">
       <div class="skill-card fade-in">
         <div class="skill-card-title">グラフィックス</div>
@@ -960,7 +424,6 @@ footer {
           <span class="skill-item">GBuffer</span>
         </div>
       </div>
-
       <div class="skill-card fade-in">
         <div class="skill-card-title">ゲームエンジン</div>
         <div class="skill-items">
@@ -970,7 +433,6 @@ footer {
           <span class="skill-item">C# (Unity)</span>
         </div>
       </div>
-
       <div class="skill-card fade-in">
         <div class="skill-card-title">プログラミング言語</div>
         <div class="skill-items">
@@ -980,7 +442,6 @@ footer {
           <span class="skill-item">Python</span>
         </div>
       </div>
-
       <div class="skill-card fade-in">
         <div class="skill-card-title">ツール・環境</div>
         <div class="skill-items">
@@ -995,16 +456,10 @@ footer {
   </div>
 </div>
 
-<!-- ============================================================
-     自己紹介セクション
-     ★ テキストをここで変える
-     ============================================================ -->
 <section>
   <div class="section-label">ABOUT</div>
   <h2 class="section-title">自己紹介</h2>
-
   <div id="about">
-    <!-- ★ 自己紹介文を変える -->
     <div class="about-text">
       <p>
         HAL東京ゲームプログラマ専攻4年制に在籍。
@@ -1022,12 +477,10 @@ footer {
         実感しました。就職前にこの経験ができたことを大切にしています。
       </p>
     </div>
-
-    <!-- ★ プロフィール情報を変える -->
     <div class="about-info">
       <div class="about-info-row">
         <div class="about-info-label">NAME</div>
-        <div>鈴木　智裕）</div>
+        <div>鈴木　智裕</div>
       </div>
       <div class="about-info-row">
         <div class="about-info-label">SCHOOL</div>
@@ -1045,10 +498,6 @@ footer {
   </div>
 </section>
 
-<!-- ============================================================
-     連絡先セクション
-     ★ リンク・メールアドレスをここで変える
-     ============================================================ -->
 <div id="contact-section">
   <div id="contact-inner">
     <div>
@@ -1056,31 +505,22 @@ footer {
       <div class="contact-title">お問い合わせ</div>
     </div>
     <div class="contact-links">
-      <!-- ★ メールアドレスを変える -->
-      <a href="mailto:your@email.com" class="contact-link">
+      <a href="mailto:rohimotokizusu0219@gmail.com" class="contact-link">
         <span class="contact-link-label">MAIL</span>
         rohimotokizusu0219@gmail.com
       </a>
-      <!-- ★ GitHubのURLを変える -->
-      <a href="https://github.com/" class="contact-link" target="_blank">
+      <a href="https://github.com/TO0219" class="contact-link" target="_blank">
         <span class="contact-link-label">GITHUB</span>
         github.com/TO0219
       </a>
-      <!-- ★ 他に追加したいSNSがあればコピーして増やす -->
     </div>
   </div>
 </div>
 
-<!-- ============================================================
-     フッター
-     ============================================================ -->
 <footer>
-  © 2025 YOUR NAME — Game Programmer Portfolio
+  © 2027 鈴木　智裕 — Game Programmer Portfolio
 </footer>
 
-<!-- ============================================================
-     スクロールアニメーション
-     ============================================================ -->
 <script>
 const observer = new IntersectionObserver((entries) => {
   entries.forEach(entry => {
@@ -1089,7 +529,6 @@ const observer = new IntersectionObserver((entries) => {
     }
   });
 }, { threshold: 0.1 });
-
 document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
 </script>
 
