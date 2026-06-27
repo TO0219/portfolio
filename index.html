@@ -138,19 +138,14 @@ footer{text-align:center;padding:2rem;font-family:var(--font-mono);font-size:0.7
 
   <!-- ① UE5「結び目の夜」 -->
   <div class="work-section fade-in">
-
-    <!-- サムネイル画像 -->
     <div class="work-media">
       <img src="UE5.png" alt="結び目の夜">
     </div>
-
-    <!-- ★ 動画エリア：GitHubに動画をアップしたら src に名前を入れる -->
     <div class="work-video">
       <video controls muted loop>
         <source src="UEVIDEO.1080p.x265.aac.mp4" type="video/mp4">
       </video>
     </div>
-
     <div class="work-body">
       <div class="work-header">
         <div><h3 class="work-title">結び目の夜 — UE5ホラーゲーム</h3></div>
@@ -162,12 +157,9 @@ footer{text-align:center;padding:2rem;font-family:var(--font-mono);font-size:0.7
         <div class="work-meta-item"><span>エンジン</span> Unreal Engine 5</div>
       </div>
       <p class="work-desc">
-        学校のカリキュラム外でUE5を勉強し習得、授業と並行して約1年かけて完成させたホラーゲームです。
-        マップはプロシージャル生成で毎回ランダムし、プレイヤーに飽きのこないような作りにしました。
-        プレイヤーが直感で出来るようにUIの調整、オプションにアイテム詳細の追加。
-        敵や主人公、箱を開けるサウンドなどは自室で録音しました。
-        モデルのボーン等の動き、敵、アイテム3DモデルはAI等を頼り、出来るだけフリー素材は使わないようにしました。
-        まだストーリーはできていませんが、制作しながら今後のストーリーを想像し日々制作に励んでいます。
+        学校のカリキュラム外でUE5を独学で習得し、授業と並行して約1年かけて完成させたホラーゲームです。
+        マップはプロシージャル生成で毎回異なるレイアウトを生成し、プレイヤーに飽きのこない体験を提供します。
+        敵・主人公・箱を開けるSEは自室で録音し、3DモデルはAI生成＋Blenderで調整。フリー素材ゼロを目標に制作しました。
         主人公・朝比奈結が神隠しに遭い迷い込んだ神殿で霊に追われながら霊魂石を集め、祭壇を目指す。
       </p>
       <div class="highlights">
@@ -177,7 +169,7 @@ footer{text-align:center;padding:2rem;font-family:var(--font-mono);font-size:0.7
           <li class="highlight-item">アイテム情報を構造体ベースのデータテーブルで管理し、データとロジックを完全分離</li>
           <li class="highlight-item">GameInstanceを用いたシーン跨ぎのBGM管理システムを実装</li>
           <li class="highlight-item">Enum（TileType / Direction / RoomTileDetaile）で壁・ドア・接続方向を型安全に管理</li>
-          <li class="highlight-item">カリキュラム外範囲を独学で習得し、企画〜実装のフル工程を一人でやり切った</li>
+          <li class="highlight-item">カリキュラム外を独学で習得し、企画〜実装のフル工程を一人でやり切った</li>
         </ul>
       </div>
       <div class="tech-stack">
@@ -193,10 +185,7 @@ footer{text-align:center;padding:2rem;font-family:var(--font-mono);font-size:0.7
   <!-- ② DirectX11 -->
   <div class="work-section fade-in">
     <div class="work-media">
-      <div class="media-placeholder">
-        <div class="media-placeholder-icon">▶</div>
-        <div>ここに動画または画像を入れる</div>
-      </div>
+      <img src="DX11.png" alt="DirectX11 3Dアクションゲーム">
     </div>
     <div class="work-body">
       <div class="work-header">
@@ -210,9 +199,9 @@ footer{text-align:center;padding:2rem;font-family:var(--font-mono);font-size:0.7
       </div>
       <p class="work-desc">
         DirectX11を使用して1から構築した3Dアクションゲーム。
-        高ポリゴンのキャラクターと広大な草原フィールドを実装。
-        初期はFPS一桁まで低下するパフォーマンス問題が発生し、
-        ボトルネックを分析・複数の手法で改善した。
+        高ポリゴンのキャラクターと広大な草原フィールドを実装し、
+        初期はFPS一桁まで低下するパフォーマンス問題が発生。
+        ボトルネックを自分で特定し、複数の手法を組み合わせて改善した。
       </p>
       <div class="highlights">
         <div class="highlights-title">技術ハイライト</div>
@@ -237,10 +226,7 @@ footer{text-align:center;padding:2rem;font-family:var(--font-mono);font-size:0.7
   <!-- ③ DirectX12 -->
   <div class="work-section fade-in">
     <div class="work-media">
-      <div class="media-placeholder">
-        <div class="media-placeholder-icon">▶</div>
-        <div>ここに動画または画像を入れる</div>
-      </div>
+      <img src="DX12.png" alt="DirectX12 ゲームエンジン">
     </div>
     <div class="work-body">
       <div class="work-header">
@@ -253,9 +239,9 @@ footer{text-align:center;padding:2rem;font-family:var(--font-mono);font-size:0.7
         <div class="work-meta-item"><span>エンジン</span> DirectX 12</div>
       </div>
       <p class="work-desc">
-        DirectX12を使用してゲームエンジンを構築。
+        DirectX12を使用してゲームエンジンをスクラッチから構築。
         DX11と比べて大幅に増えた事前準備（コマンドリスト・コマンドキュー・ディスクリプタヒープ等）を
-        手動で実装し、GPU低レイヤーの理解を深めました。
+        全て手動で実装し、GPU低レイヤーの理解を深めました。
       </p>
       <div class="highlights">
         <div class="highlights-title">技術ハイライト</div>
@@ -278,17 +264,14 @@ footer{text-align:center;padding:2rem;font-family:var(--font-mono);font-size:0.7
     </div>
   </div>
 
-  <!-- ④ Unity チーム -->
+  <!-- ④ 4年次チーム制作 -->
   <div class="work-section fade-in">
     <div class="work-media">
-      <div class="media-placeholder">
-        <div class="media-placeholder-icon">▶</div>
-        <div>ここに動画または画像を入れる</div>
-      </div>
+      <img src="team4.png" alt="4年次チーム制作ゲーム">
     </div>
     <div class="work-body">
       <div class="work-header">
-        <div><h3 class="work-title">チーム制作ゲーム — Unity</h3></div>
+        <div><h3 class="work-title">4年次チーム制作ゲーム — Unity</h3></div>
         <div class="work-number">WORK 04</div>
       </div>
       <div class="work-meta">
@@ -297,10 +280,10 @@ footer{text-align:center;padding:2rem;font-family:var(--font-mono);font-size:0.7
         <div class="work-meta-item"><span>チーム規模</span> 10人</div>
       </div>
       <p class="work-desc">
-        Unityでのチーム開発を経験。メインプログラムと主にUI実装を担当。
+        Unityでのチーム開発を経験。メインプログラムとUI実装を主に担当。
         開発中にプロジェクト設定の問題・Gitコンフリクト・報連相のすれ違いが重なり
         チームメンバーと衝突しましたが、お互いの課題を率直に話し合い改善しました。
-        就職前にチームで働くことの本質を体験し、大きな成長につながったと感じました。
+        就職前にチームで働くことの本質を体験し、大きな成長につながりました。
       </p>
       <div class="highlights">
         <div class="highlights-title">技術ハイライト</div>
@@ -318,6 +301,135 @@ footer{text-align:center;padding:2rem;font-family:var(--font-mono);font-size:0.7
         <span class="tech-badge">Git</span>
         <span class="tech-badge">Scene Management</span>
         <span class="tech-badge">UI Toolkit</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- ⑤ 3年次チーム制作 Formula x Tactics -->
+  <div class="work-section fade-in">
+    <div class="work-media">
+      <img src="team3.png" alt="Formula x Tactics">
+    </div>
+    <div class="work-video">
+      <video controls muted loop>
+        <source src="FormulaxTacticsPV.mp4" type="video/mp4">
+      </video>
+    </div>
+    <div class="work-body">
+      <div class="work-header">
+        <div><h3 class="work-title">3年次ゲーム制作 — Formula x Tactics</h3></div>
+        <div class="work-number">WORK 05</div>
+      </div>
+      <div class="work-meta">
+        <div class="work-meta-item"><span>制作期間</span> 2ヶ月</div>
+        <div class="work-meta-item"><span>担当</span> メインプログラム・企画（主に）</div>
+        <div class="work-meta-item"><span>チーム規模</span> 8人</div>
+        <div class="work-meta-item"><span>エンジン</span> Unity</div>
+      </div>
+      <p class="work-desc">
+        企画からチームをまとめてメイン担当として制作したカードゲーム。
+        敵・プレイヤー双方のデッキ挙動制御をメインで実装。
+        山札からカードを引く際の動作フロー（ドロー処理・デッキシャッフル・手札への追加）を設計し、
+        デッキオブジェクトが視覚的に動くアニメーション制御まで一貫して担当した。
+      </p>
+      <div class="highlights">
+        <div class="highlights-title">技術ハイライト</div>
+        <ul class="highlight-list">
+          <li class="highlight-item">デッキ・手札・捨て札の状態をクラスで分離管理し、ドロー処理を設計</li>
+          <li class="highlight-item">敵AIのデッキ挙動をプレイヤーと共通のロジックで制御し、コードを共通化</li>
+          <li class="highlight-item">カードを引く際のデッキオブジェクトのアニメーション（動き・消滅）を実装</li>
+          <li class="highlight-item">山札が0枚になった際の捨て札シャッフル→再補充フローを実装</li>
+          <li class="highlight-item">企画段階からチームをまとめ、ゲームルールの設計にも主体的に関わった</li>
+        </ul>
+      </div>
+      <div class="tech-stack">
+        <span class="tech-badge">Unity</span>
+        <span class="tech-badge">C#</span>
+        <span class="tech-badge">Git</span>
+        <span class="tech-badge">Card Game System</span>
+        <span class="tech-badge">Deck Control</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- ⑥ 2年次チーム制作 GOGOBOMBA -->
+  <div class="work-section fade-in">
+    <div class="work-media">
+      <img src="team2.png" alt="GOGO BOMBA">
+    </div>
+    <div class="work-body">
+      <div class="work-header">
+        <div><h3 class="work-title">2年次ゲーム制作 — GOGO BOMBA</h3></div>
+        <div class="work-number">WORK 06</div>
+      </div>
+      <div class="work-meta">
+        <div class="work-meta-item"><span>担当</span> 爆弾・ワープ挙動・家ブロック配置</div>
+        <div class="work-meta-item"><span>種別</span> チーム制作（2年）</div>
+        <div class="work-meta-item"><span>エンジン</span> Unity</div>
+      </div>
+      <p class="work-desc">
+        Unityを用いて開発した2Dアクションパズルゲーム。
+        主に爆弾の動きとワープの挙動、家のブロック配置を担当。
+        ステージギミックやオブジェクトの実装を行い、
+        チームでゲームデザインから実装・調整までを協力して開発した。
+      </p>
+      <div class="highlights">
+        <div class="highlights-title">技術ハイライト</div>
+        <ul class="highlight-list">
+          <li class="highlight-item">爆弾の落下・爆発・チャージなど多様な爆弾ギミックを実装。連鎖とタイミングを活かしたギミック設計</li>
+          <li class="highlight-item">ワープオブジェクトに触れると対応するワープ先へ瞬時に移動するワープシステムを実装。ベアリング管理・移動処理も担当</li>
+          <li class="highlight-item">ステージの見た目と構造を考慮した家のタイル・装飾ブロック配置。プレイ導線にも配慮したレベルデザイン</li>
+          <li class="highlight-item">Tilemap・Prefab・Collider・Particle System を活用したオブジェクト設計</li>
+          <li class="highlight-item">企画・デザイン・実装・調整をチームで分担し、2年かけて完成させた</li>
+        </ul>
+      </div>
+      <div class="tech-stack">
+        <span class="tech-badge">Unity</span>
+        <span class="tech-badge">C#</span>
+        <span class="tech-badge">Tilemap</span>
+        <span class="tech-badge">Animator</span>
+        <span class="tech-badge">Prefab</span>
+        <span class="tech-badge">Collider</span>
+        <span class="tech-badge">Particle System</span>
+        <span class="tech-badge">2D</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- ⑦ 1年次 テトリミノ -->
+  <div class="work-section fade-in">
+    <div class="work-media">
+      <img src="1.png" alt="テトリミノ">
+    </div>
+    <div class="work-body">
+      <div class="work-header">
+        <div><h3 class="work-title">1年次ゲーム制作 — テトリミノ</h3></div>
+        <div class="work-number">WORK 07</div>
+      </div>
+      <div class="work-meta">
+        <div class="work-meta-item"><span>受賞</span> 1年次進級制作展 構成力賞</div>
+        <div class="work-meta-item"><span>担当</span> 個人制作</div>
+        <div class="work-meta-item"><span>言語</span> C言語</div>
+      </div>
+      <p class="work-desc">
+        C言語のコンソール上で制作したテトリスゲーム。
+        ブロックの回転処理や落下処理、ライン消去などの基本的なゲームロジックを実装。
+        シンプルなルールながら遊びやすさを意識した設計とし、
+        1年次進級制作展にて構成力賞を受賞した。
+      </p>
+      <div class="highlights">
+        <div class="highlights-title">技術ハイライト</div>
+        <ul class="highlight-list">
+          <li class="highlight-item">C言語コンソール上でブロックの回転・落下・ライン消去ロジックをスクラッチで実装</li>
+          <li class="highlight-item">7種類のテトリミノの形状データを配列で管理し、回転状態を計算で導出</li>
+          <li class="highlight-item">NEXTブロック表示・スコア管理など、ゲームとして必要な要素を一通り実装</li>
+          <li class="highlight-item">操作性と遊びやすさを意識した設計が評価され、進級制作展で構成力賞を受賞</li>
+        </ul>
+      </div>
+      <div class="tech-stack">
+        <span class="tech-badge">C言語</span>
+        <span class="tech-badge">コンソールゲーム</span>
+        <span class="tech-badge">個人制作</span>
       </div>
     </div>
   </div>
